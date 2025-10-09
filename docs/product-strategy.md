@@ -1,46 +1,9 @@
-# Product Strategy Document
+## Product Vision
 
-## Executive Summary
-- Brief overview of the product vision, goals, and strategic importance.
+### Vision Statement
 
-## Market Analysis
-- Target market and customer segments
-- Market trends and opportunities
-- Competitive landscape
+There is currently no application for users to leverage the power of AI in interview preparation. The goal of this application is to provide tools that integrate with AI for users to prepare interview.
 
-## Product Vision & Mission
-- Product vision statement
-- Product mission statement
+### Product Goal
 
-## Goals & Objectives
-- Short-term goals
-- Long-term objectives
-- Key performance indicators (KPIs)
-
-## Value Proposition
-- Unique selling points (USPs)
-- Core product benefits
-
-## Product Roadmap
-- Major milestones
-- Feature releases
-- Timeline
-
-## Go-to-Market Strategy
-- Positioning and messaging
-- Pricing strategy
-- Distribution channels
-- Marketing and sales plan
-
-## Risks & Mitigation
-- Key risks
-- Mitigation strategies
-
-## Metrics & Success Criteria
-- How success will be measured
-- Feedback and iteration plan
-
-## Appendix
-- Supporting data
-- References
-- Additional notes
+* Leverage AI to provide tools in interview preparation.

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a monorepo template containing a Next.js frontend and a Gin backend. The frontend handles the user interface, while the backend provides API endpoints and business logic.
+This is a monorepo project containing a Next.js frontend and a Gin backend. The frontend handles the user interface, while the backend provides API endpoints and business logic.
 
 ## Documentation
 

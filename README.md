@@ -1,6 +1,6 @@
-# template-next-gin-mono
+# Prein
 
-A template repository with sub projects of the Next.js project and the Gin project.
+Leverage AI to provide tools in interview preparation.
 
 ## Projects
 
