@@ -23,7 +23,7 @@ Use this checklist to trace implementation progress. Update the checkboxes as wo
 
 1. Add environment example file
 
-- Description: Create `backend/.env.example` with `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `OAUTH_REDIRECT_URL`, `SESSION_SECRET`, `DATABASE_URL`, `ENV`.
+- Description: update `backend/.env.example` with `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `OAUTH_REDIRECT_URL`, `SESSION_SECRET`.
 - Acceptance criteria: File exists and documents required env variables and example values or placeholders.
 - Dependencies: none
 
