@@ -8,7 +8,7 @@ This actionable todo list is derived from the System Design (`sd.md`) for Prein 
 
 Use this checklist to trace implementation progress. Update the checkboxes as work is completed.
 
-- [ ] 1. Add environment example file
+- [x] 1. Add environment example file
 - [ ] 2. DB migrations: `users` and `resumes`
 - [ ] 3. Backend — session store (in-memory)
 - [ ] 4. Backend — `/auth/google/start` route
