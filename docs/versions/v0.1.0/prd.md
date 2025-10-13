@@ -4,7 +4,7 @@
 0.1.0
 
 **Document Status**  
-Draft
+Approved
 
 **Document Owner**  
 [chieh0919@gmail.com](mailto:chieh0919@gmail.com)
