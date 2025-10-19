@@ -28,7 +28,7 @@ To be written.
 
 To be written.
 
-## Coding Style
+## Coding Guidelines
 
 - Follow [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html).
 - Follow [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html).

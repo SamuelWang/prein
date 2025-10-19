@@ -33,7 +33,7 @@ The system has three main components:
   - DB access layer: upsert users, query current user.
 
 - Database (PostgreSQL)
-  - Tables: users, resumes (simple for v0.1.0).
+  - Tables: users.
 
 Interaction flow:
 
@@ -79,27 +79,13 @@ CREATE TABLE IF NOT EXISTS users (
   provider_id TEXT NOT NULL UNIQUE,
   email TEXT,
   name TEXT,
+  family_name TEXT,
+  given_name TEXT,
   avatar_url TEXT,
-  source TEXT NOT NULL,
+  source users_source NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
-
--- resumes table (simplified)
-
-CREATE TABLE IF NOT EXISTS resumes (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  title TEXT,
-  content TEXT,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
-
--- Indexes
-
-CREATE UNIQUE INDEX IF NOT EXISTS users_provider_id_idx ON users(provider_id);
-CREATE INDEX IF NOT EXISTS resumes_user_id_idx ON resumes(user_id);
 
 Notes:
 - Use a migration tool (golang-migrate) to apply these DDLs. For local development the repository should include migration files under `backend/db/migrations` (future step).
@@ -271,7 +257,7 @@ Production notes
    - `/auth/google/start`
    - `/auth/google/callback`
    - `/api/v1/users/current`
-3. Add DB migrations for `users` and `resumes` under `backend/db/migrations` and run `go run .` locally to verify.
+3. Add DB migrations for `users` under `backend/db/migrations` and run `go run .` locally to verify.
 4. Create a minimal frontend login page with "Sign in with Google" button that navigates to `/auth/google/start` and a homepage showing header + hero.
 5. Add unit and integration tests for token exchange, upsert logic, and session handling.
 
@@ -279,4 +265,4 @@ Production notes
 
 - How to rotate Google client secret: create new client credentials in Google console, update `GOOGLE_CLIENT_SECRET` in secrets manager, deploy, and verify sign-ins.
 - How to debug sign-in failures: check backend logs for token exchange errors, inspect `state` storage, confirm redirect URI configured in Google console matches `OAUTH_REDIRECT_URL`.
-- How to recover from duplicate users: safely merge user records by matching `provider_id` and moving dependent resumes; prevent recurrence via unique constraint + upsert.
+- How to recover from duplicate users: safely merge user records by matching `provider_id`; prevent recurrence via unique constraint + upsert.

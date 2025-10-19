@@ -2,14 +2,14 @@
 
 Last updated: 2025-10-13
 
-This actionable todo list is derived from the System Design (`sd.md`) for Prein v0.1.0. Tasks are organized by priority and grouped into frontend, backend, DB, testing, and operations. Each task includes a short description, acceptance criteria, and dependencies.
+This actionable todo list is derived from the System Design ([sd.md](./sd.md)) for Prein v0.1.0. Tasks are organized by priority and grouped into frontend, backend, DB, testing, and operations. Each task includes a short description, acceptance criteria, and dependencies.
 
 ## Progress checklist
 
 Use this checklist to trace implementation progress. Update the checkboxes as work is completed.
 
 - [x] 1. Add environment example file
-- [ ] 2. DB migrations: `users` and `resumes`
+- [ ] 2. DB migrations: `users`
 - [ ] 3. Backend — session store (in-memory)
 - [ ] 4. Backend — `/auth/google/start` route
 - [ ] 5. Backend — `/auth/google/callback` route
@@ -27,9 +27,9 @@ Use this checklist to trace implementation progress. Update the checkboxes as wo
 - Acceptance criteria: File exists and documents required env variables and example values or placeholders.
 - Dependencies: none
 
-2. DB migrations: `users` and `resumes`
+2. DB migrations: `users`
 
-- Description: Add SQL migration files under `backend/db/migrations` for creating `users` and `resumes` tables (DDL from `sd.md`).
+- Description: Add SQL migration files under `backend/db/migrations` for creating `users` table (DDL from [sd.md](./sd.md)).
 - Acceptance criteria: Migration files present; running migrations (locally) creates tables.
 - Dependencies: `backend` project build, `golang-migrate` setup
 

@@ -16,7 +16,7 @@ In-scope for v0.1.0:
 - Google sign-in (OAuth2 / OIDC) integration for user authentication.
 - Backend endpoints to create and retrieve user records that include google account ID and source.
 - Minimal frontend pages: login flow and homepage (header + hero).
-- Storage of users and resume metadata (resume CRUD may be limited in v0.1.0).
+- Storage of users metadata.
 
 Out of scope for v0.1.0:
 - Full resume editor features, multi-language UI, advanced authorization rules, and external integrations beyond Google login.
@@ -56,22 +56,15 @@ User
 - provider_id: TEXT (unique, not null)
 - email: TEXT
 - name: TEXT
+- family_name: TEXT
+- given_name: TEXT
 - avatar_url: TEXT
 - source: TEXT (e.g., "google")
 - created_at: TIMESTAMP
 - updated_at: TIMESTAMP
 
-Resume (prepared schema; full CRUD may be implemented in subsequent increments)
-- id: UUID (PK)
-- user_id: UUID (FK -> users.id)
-- title: TEXT
-- content: TEXT (markdown content)
-- created_at: TIMESTAMP
-- updated_at: TIMESTAMP
-
 Indexes & constraints
 - Unique index on `users.provider_id`
-- FK constraint `resumes.user_id` -> `users.id`
 
 ## API Endpoints
 

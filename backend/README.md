@@ -26,7 +26,9 @@ go run .
 
 Once the application is running, visit the `:8080` port to access endpoints.
 
-## Coding Style
+## Coding Guidelines
+
+### Golang and Gin
 
 - Follow [Go Style](https://google.github.io/styleguide/go/).
 - Use Golang best practices.
@@ -60,3 +62,20 @@ backend
 This project uses a PostgreSQL database.
 
 This project uses [golang-migrate](https://github.com/golang-migrate/migrate) for database migrations, [sqlc](https://sqlc.dev/) for type-safe SQL queries, and [pgx](https://github.com/jackc/pgx) as the database driver.
+
+### Creating Migrations
+
+To create a new migration, use the following command:
+
+```sh
+migrate create -ext sql -dir db/migrations -seq <migration_name>
+```
+
+### Running Migrations
+
+To run the migrations, use the following command:
+
+```sh
+source .env
+migrate -path db/migrations -database $DATABASE_URL up
+```
