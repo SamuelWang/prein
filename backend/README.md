@@ -73,9 +73,31 @@ migrate create -ext sql -dir db/migrations -seq <migration_name>
 
 ### Running Migrations
 
-To run the migrations, use the following command:
+Migrate up to the latest version:
 
 ```sh
 source .env
 migrate -path db/migrations -database $DATABASE_URL up
+```
+
+Migrate down (rollback) one version:
+
+```sh
+source .env
+migrate -path db/migrations -database $DATABASE_URL down 1
+```
+
+## Session Management
+
+This project uses [sessions](https://github.com/gin-contrib/sessions) package for session management.  
+In the current implementation, uses the cookie-based session store.
+
+### Configuring Cookie Store
+
+To configure the cookie store, set the `SESSION_SECRET` environment variable in your `.env` file. This secret is used to sign and encrypt the session cookies.
+
+Example for generating a random secret:
+
+```sh
+openssl rand -base64 32
 ```
